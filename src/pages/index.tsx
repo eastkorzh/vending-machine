@@ -1,6 +1,6 @@
 import React from "react";
-import ChooseProductPage from "./choose-product";
+import ChooseGoodsPage from "./choose-goods";
 
 export const Routing = () => {
-  return <ChooseProductPage />;
+  return <ChooseGoodsPage />;
 };
