@@ -3,9 +3,14 @@ import { SelectCurrency } from "@/features/currency-change";
 import { Box, Grid, Paper, Stack, styled } from "@mui/material";
 import { GoodCard, stall as stallModel } from "@/entities/stall";
 import { GoodCountChange } from "@/features/good-count-change";
+import { useMount } from "@/shared/hooks/useMount";
+import { useGetRates } from "@/features/currency-change/model";
+import { BASE_CURRENCY } from "@/shared/constants";
 
 const ChooseGoodsPage: React.FC = () => {
   const stall = stallModel.useStall();
+  const getRates = useGetRates();
+  useMount(() => getRates(BASE_CURRENCY));
 
   return (
     <Root sx={{ flexGrow: 1, padding: 2 }}>

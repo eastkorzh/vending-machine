@@ -14,7 +14,7 @@ const getRatesFx = createEffect(async (baseCurrency = BASE_CURRENCY) => {
   return data.rates as Rates;
 });
 
-const $rates = createStore<Rates>({}).on(
+export const $rates = createStore<Rates>({}).on(
   getRatesFx.doneData,
   (_, data) => data
 );

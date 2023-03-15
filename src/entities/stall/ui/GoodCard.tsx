@@ -26,7 +26,7 @@ export const GoodCard: React.FC<GoodCardProps> = ({
           {good.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          <Price amount={good.price} />
+          <Price amount={good.convertedPrice || good.basePrice} />
         </Typography>
       </CardContent>
       <CardActions>{CardBottomActions}</CardActions>

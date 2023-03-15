@@ -4,17 +4,19 @@ import { createStore } from "effector";
 
 export interface Good {
   name: string;
-  price: Amount;
+  basePrice: Amount;
+  convertedPrice: Amount | null;
   imageUrl: string;
 }
 
 const createGood = ({ name, priceValue }): Good => {
   return {
     name,
-    price: {
+    basePrice: {
       value: priceValue,
       currency: BASE_CURRENCY,
     },
+    convertedPrice: null,
     imageUrl: "https://cdn-icons-png.flaticon.com/512/3724/3724763.png",
   };
 };
