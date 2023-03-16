@@ -3,7 +3,7 @@ import { Amount } from "@/shared/types/amount";
 import { useStore } from "effector-react";
 
 const $totalPrice = $cart.map<Amount | null>((cart) => {
-  if (!cart) {
+  if (cart.length === 0) {
     return null;
   }
   const totalValue = cart
