@@ -6,6 +6,8 @@ import { GoodCountChange } from "@/features/good-count-change";
 import { useMount } from "@/shared/hooks/useMount";
 import { useGetRates } from "@/features/currency-change/model";
 import { BASE_CURRENCY } from "@/shared/constants";
+import { CartList } from "@/entities/cart";
+import { TotalPrice } from "@/features/totalPice";
 
 const ChooseGoodsPage: React.FC = () => {
   const stall = stallModel.useStall();
@@ -48,6 +50,8 @@ const ChooseGoodsPage: React.FC = () => {
           <Item>
             <Stack spacing={2}>
               <SelectCurrency />
+              <CartList />
+              <TotalPrice />
             </Stack>
           </Item>
         </Grid>

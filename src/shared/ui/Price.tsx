@@ -4,7 +4,7 @@ import { Amount } from "../types/amount";
 export const Price: React.FC<{ amount: Amount }> = ({ amount }) => {
   return (
     <span>
-      {amount.value} {amount.currency}
+      {Math.floor(amount.value * 100) / 100} {amount.currency}
     </span>
   );
 };
